@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Logeion</title>
+		<link rel="stylesheet" type="text/css" href="css/dvlg.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.8.14.custom.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.qtip.css" />
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&subset=latin,greek-ext,latin-ext' rel='stylesheet' type='text/css'>		
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="jquery.jscrollpane.min.js"></script>
+		<script type="text/javascript" src="jquery.mousewheel.js"></script>
+		<script type="text/javascript" src="jquery.qtip.min.js"></script>
+		<script type="text/javascript">
+		  
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-33316065-1']);
+		  _gaq.push(['_trackPageview']);
+		  
+		  (function() {
+		  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		  
+		</script>
+	</head>
+	<body>
+		<div id="main_container">
+			<div id="header">
+				<div id="title">ΛΟΓΕΙΟΝ</div>
+				<div id="search">
+					<input type="search" size=23 placeholder="Enter Greek/Latin term..." id="search_word" autocapitalize="off" autocorrect="off"/>
+					<input type="submit" value="Go" id="search_button" class="button" />
+				</div>
+			</div>
+			
+			<div id="body">
+				<div id="wordwheel_container" class="left_container">
+					<ol id="wordwheel">
+						<li id="w0" class="other_hws"></li>
+						<li id="w1" class="other_hws"></li>
+						<li id="w2" class="other_hws"></li>
+						<li id="w3" class="other_hws"></li>
+						<li id="w4" class="other_hws"></li>
+						<li id="w5" class="other_hws"></li>
+						<li id="w6" class="other_hws"></li>
+						<li id="w7" class="other_hws"></li>
+						<li id="w8" class="other_hws"></li>
+						<li id="w9" class="other_hws"></li>
+						<li id="w10" class="other_hws"></li>
+						<li id="w11" class="other_hws"></li>
+						<li id="w12" class="other_hws"></li>
+						<li id="w13" class="other_hws"></li>
+						<li id="w14" class="other_hws"></li>
+						<li id="w15" class="other_hws"></li>
+						<li id="w16" class="other_hws"></li>
+						<li id="w17" class="other_hws"></li>
+						<li id="w18" class="other_hws"></li>
+						<li id="w19" class="other_hws"></li>
+						<li id="w20" class="other_hws"></li>
+						<li id="w21" class="other_hws"></li>
+						<li id="w22" class="other_hws"></li>
+						<li id="w23" class="other_hws"></li>
+						<li id="w24" class="other_hws"></li>
+						<li id="w25" class="other_hws"></li>
+						<li id="w26" class="other_hws"></li>
+						<li id="w27" class="other_hws"></li>
+						<li id="w28" class="other_hws"></li>
+						<li id="w29" class="other_hws"></li>
+						<li id="w30" class="other_hws"></li>
+						<li id="w31" class="other_hws"></li>
+						<li id="w32" class="other_hws"></li>
+						<li id="w33" class="other_hws"></li>
+						<li id="w34" class="other_hws"></li>
+						<li id="w35" class="other_hws"></li>
+						<li id="w36" class="other_hws"></li>
+						<li id="w37" class="other_hws"></li>
+						<li id="w38" class="other_hws"></li>
+						<li id="w39" class="other_hws"></li>
+						<li id="w40" class="other_hws"></li>
+						<li id="w41" class="other_hws"></li>
+						<li id="w42" class="other_hws"></li>
+						<li id="w43" class="other_hws"></li>
+						<li id="w44" class="other_hws"></li>
+						<li id="w45" class="other_hws"></li>
+						<li id="w46" class="other_hws"></li>
+						<li id="w47" class="other_hws"></li>
+						<li id="w48" class="other_hws"></li>
+						<li id="w49" class="other_hws"></li>
+						<li id="w50" class="other_hws"></li>
+						<li id="w51" class="other_hws"></li>
+						<li id="w52" class="other_hws"></li>
+						<li id="w53" class="other_hws"></li>
+						<li id="w54" class="other_hws"></li>
+						<li id="w55" class="other_hws"></li>
+						<li id="w56" class="other_hws"></li>
+						<li id="w57" class="other_hws"></li>
+						<li id="w58" class="other_hws"></li>
+						<li id="w59" class="other_hws"></li>
+						<li id="w60" class="other_hws"></li>
+					</ol>
+				</div>
+					
+				<div id="result">
+					<div id="notices"></div>
+					<div id="headword"></div>
+					<div id="entries" class="scroll-pane"></div>
+				</div>
+
+				<div id="right_side">				
+					<div id="previous_container" class="right_container">
+						<div id="previous_title" class="right_title">Previous</div>
+						<ol id="previous">
+							<li id="p0" class="prev_hws"></li>
+							<li id="p1" class="prev_hws"></li>
+							<li id="p2" class="prev_hws"></li>
+							<li id="p3" class="prev_hws"></li>
+							<li id="p4" class="prev_hws"></li>
+							<li id="p5" class="prev_hws"></li>
+							<li id="p6" class="prev_hws"></li>
+							<li id="p7" class="prev_hws"></li>
+							<li id="p8" class="prev_hws"></li>
+							<li id="p9" class="prev_hws"></li>
+						</ol>
+					</div>
+				
+					<div id="frequencies_container" class="right_container">
+						<div id="frequencies_title" class="right_title">Frequencies</div>
+						<div id="frequencies">
+						</div>
+					</div>
+					
+					<div id="textbook_container" class="right_container">
+						<div id="textbook_title" class="right_title">Textbook</div>
+						<ol id="textbook">
+						</ol>
+					</div>
+					
+					<div id="collocations_container" class="right_container">
+						<div id="collocations_title" class="right_title">Collocations</div>
+						<ol id="collocations">
+						</ol>
+					</div>
+				</div>
+			</div>
+			
+			<div id="footer">
+				<button id="top_button" class="button">Back to Top</button>
+				<button id="reset_button">Reset</button>
+				<button id="home_button">Perseus@Chicago</button>
+				<button id="sources_button">About</button>
+				<button id="problem_button">Report a Problem</button>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			var api;
+			var loaded = false;
+		
+			$(document).ready(function(){
+				// Used for back when I still returned JSON from python
+				// not sure if I still need it/makes a difference... (see autocomplete)
+				$.ajaxSetup ({
+					cache: false
+				});
+				
+				setupHeader();
+				setupFooter();
+				setupDictionaryTabs();
+				
+				// Causes all buttons to take on the JQueryUI appearance
+				$("input:submit, button").button();
+				
+				/*
+				 * Links words in the examples section to their respective morph.pl lookup and
+				 * allows searching by author and work by clicking on either 
+				 */
+				/*$("w").live("click", function(){
+					id = $(this).attr("id");
+					lang = $(this).parent().attr("lang");
+					window.open("http://artflx.uchicago.edu/perseus-cgi/morph.pl?lang=" + lang + "&id=" + id,
+								"","width=800,height=600");
+				});*/
+				
+				$("as").live("click", function(){
+					href = $(this).attr("href");
+					window.open(href);
+				});
+				
+				$("ws").live("click", function(){
+					href = $(this).attr("href");
+					window.open(href);
+				});
+				
+				/*
+				 * Allows looking up words found in collocation widget
+				 */
+				$(".searchable").live("click", function(){
+					if ($(this).attr("sw")) {
+						searchWrapper($(this).attr("sw"), -1);
+					}
+					else {
+						searchWrapper($(this).html(), -1);
+					}
+				});
+				
+				/*
+				 * Initializes scroll pane for dicitionary entries section using these settings
+				 */
+				var settings = {
+					showArrows: false,
+					animateScroll: true,
+					mouseWheelSpeed: 50,
+					verticalGutter: 20,
+					hideFocus: true
+				};
+				var pane = $(".scroll-pane");
+				pane.jScrollPane(settings);
+				api = pane.data("jsp");
+
+				/*
+				 * Hides all content from the screen on initial load and if a word is found
+				 * after the hash mark in the url, searches for the word
+				 */
+				$("#wordwheel_container").hide();
+				$("#previous_container").hide();
+				$("#frequencies_container").hide();
+				$("#textbook_container").hide();
+				$("#collocations_container").hide();
+				$("#authors_container").hide();
+				$("#result").fadeTo(0, 0, function(){
+					sw = decodeURIComponent(location.hash.slice(1));
+					if (sw != "") {
+						if (loaded) { loaded = false; return; }
+						loaded = true;
+						search(sw);
+						addToPrev(sw);
+						getTextbook(sw);
+						getCollocations(sw);
+						getFrequencies(sw);
+						//if (!supports_history_api()) { return; }
+						//history.pushState(null, null, "index.html#" + sw);
+					}
+					else {
+						//$("#search_word").focus();
+						//if (!supports_history_api()) { return; }
+						//history.pushState(null, null, "index.html");
+					}				
+				});	
+			});
+
+			/*
+			 * Sets up the back function for when the user calls it from the browser
+			 */
+			window.addEventListener("popstate", function(e) {
+				sw = location.hash.slice(1);
+				if (sw == "") {
+					resetAll();
+					document.title = "Logeion";
+				}
+				else {
+					if (loaded) { loaded = false; return; }
+					loaded = true;
+					var found = checkInWordwheel(sw);
+					if (found == -1) {
+						search(sw);
+					}
+					else {
+						wheel(sw, found);
+					}
+					getTextbook(sw);
+					getCollocations(sw);
+					getFrequencies(sw);
+					document.title = sw;
+				}
+			}, false);
+			
+			/*
+			 * Sets up key handler for various browsers
+			 */
+			if (document.addEventListener) {
+				document.addEventListener("keydown", keydownHandler, false);
+			}
+			else if (document.attachEvent) {
+				document.attachEvent("onkeydown", keydownHandler);
+			}
+			
+			function keydownHandler(e) {
+				if (e.keyCode == 13) {
+					if (searchWrapper($("#search_word").val(), -1)) {
+						$("#search_word").autocomplete("close");
+					}
+					if (e.preventDefault) {
+						e.preventDefault();
+					}
+					else {
+						return false;
+					}
+				}
+			}
+			
+			/*
+			 * Sets up the home link, search button, and autocomplete
+			 */
+			function setupHeader() {
+				/* 
+				 * Makes the title function as a reset button (similar to function as home
+				 * page link on most sites)
+				 */
+				$("#title").click(function(){
+					resetAll();
+					document.title = "Logeion";
+					if (!supports_history_api()) { return; }
+					history.pushState(null, null, "index.html");
+				});
+			
+				/*
+				 * Enables search button in header
+				 */
+				$("#search_button").click(function(){
+					searchWrapper($("#search_word").val(), -1);
+				});
+			
+				/*
+				 * Sets up the autocomplete functionality built into jQueryUI 
+				 * (requires JSON???)
+				 */
+				$("#search_word").autocomplete({
+					source: "/cgi-bin/logeion/autocomplete.py",
+					delay: 0,
+					minLength: 3,
+					select: function(event, ui) {
+						if (event.keyCode == 13) {
+							return;
+						}
+						searchWrapper(ui.item.value, -1);
+					}
+				});
+			}
+			
+			/*
+			 * Sets up various buttons in footer that allow resetting the page, reporting 
+			 * problems, linking to various other pages, and other functions
+			 */
+			function setupFooter() {
+				$("#top_button").click(function(){
+					//$("html, body").animate({scrollTop: 0}, "slow");
+					api.scrollToY(0);
+				});
+				
+				$("#reset_button").click(function(){
+					resetAll();
+					document.title = "Logeion";
+					if (!supports_history_api()) { return; }
+					history.pushState(null, null, "index.html");
+				});
+				
+				$("#home_button").click(function(){
+					window.location = "http://perseus.uchicago.edu/";
+				});
+				
+				$("#sources_button").click(function(){
+					window.location = "about.html";
+				});
+				
+				$("#problem_button").click(function(){
+					window.location = "https://spreadsheets.google.com/viewform?key=pOHHlctnbPqT1dKtC24I2Iw";
+				});
+			}
+			
+			/*
+			 * Sets up the ability to show/hide dictionary entries or entire dictionaries
+			 * by clicking on the names and numbers in their tabs
+			 */
+			function setupDictionaryTabs() {
+				// Allows the minimizing and restoring of entire dictionaries by clicking on
+				// their names
+				$(".dict_name").live("click", function(){
+					var entries = $(this).parent().next().children();
+					var i = 1;
+					var hidden = false;
+					if ($(this).html() == "Examples from the corpus") {
+						hidden = $("#ExamplesFromTheCorpus1").css("display") == "none";
+					}
+					else {
+						while ($("#" + $(this).parent().attr("id") + i).attr("id") != undefined) {
+							hidden = hidden || ($("#" + $(this).parent().attr("id") + i).css("display") == "none");
+							$("#" + $(this).parent().attr("id") + "_et" + i).attr("class", "entry_tab");
+							i++;
+						}
+					}
+					if (hidden == true) {
+						entries.slideDown("slow", function(){
+							api.reinitialise();
+						});
+					}
+					else {
+						entries.slideUp("slow", function(){
+							api.reinitialise();
+						});
+					}
+				});
+				
+				// Allows focusing on specific entries when there are multiple ones in a single
+				// dictionary box
+				$(".entry_tab").live("click", function(){
+					var dict = "#" + $(this).parent().attr("id");
+					var i = 1;
+					while ($(dict + i).attr("id") != undefined) {
+						if (i != $(this).html()) {
+							$(dict + "_et" + i).attr("class", "entry_tab");
+							$(dict + i).slideUp("slow", function(){
+								api.reinitialise();
+							});
+						}
+						else if (i == $(this).html()) {
+							if ($(dict + "_et" + i).attr("class") == "entry_tab") {
+								$(dict + "_et" + i).attr("class", "entry_tab_active");
+							}
+							else {
+								$(dict + "_et" + i).attr("class", "entry_tab");
+							}
+							if ($(dict + i).css("display") == "none") { 
+								$(dict + i).slideDown("slow", function(){
+									api.reinitialise();
+								});
+							}
+						}
+						i++;
+					}
+				});
+				
+				// Makes clicking on the active tab's control bring back those that were hidden
+				$(".entry_tab_active").live("click", function(){
+					var dict = "#" + $(this).parent().attr("id");
+					var i = 1;
+					while ($(dict + i).attr("id") != undefined) {
+						if (i != $(this).html()) {
+							$(dict + "_et" + i).attr("class", "entry_tab");
+							$(dict + i).slideDown("slow", function(){
+								api.reinitialise();
+							});
+						}
+						else if (i == $(this).html()) {
+							if ($(dict + "_et" + i).attr("class") == "entry_tab") {
+								$(dict + "_et" + i).attr("class", "entry_tab_active");
+							}
+							else {
+								$(dict + "_et" + i).attr("class", "entry_tab");
+							}
+							if ($(dict + i).css("display") == "none") { 
+								$(dict + i).slideDown("slow", function(){
+									api.reinitialise();
+								});
+							}
+						}
+						i++;
+					}
+				});
+
+				$(".entry").live("dblclick", function(){
+					sw = (window.getSelection && window.getSelection().toString()) ||
+						 (document.selection && document.selection.createRange().text);
+					
+					sw = sw.replace(/\s/g, '');
+					
+					if (sw == $("#w30").html() || sw == "") {
+						return;
+					}
+					else {
+						document.title = sw;
+						getTextbook(sw);
+						getCollocations(sw);
+						getFrequencies(sw);
+						var found = checkInWordwheel(sw);
+						if (found == -1) {
+							search(sw);
+						}
+						else {
+							wheel(sw, found);
+						}
+						document.title = sw;
+						if (!supports_history_api()) { return; }
+						history.pushState(null, null, "index.html#" + sw);
+					}				
+				});
+				
+			}
+			
+			/*
+			 * Checks if browser is capable of HTML5 history modifications
+			 */
+			function supports_history_api() {
+				return !!(window.history && history.pushState);
+			}
+
+			/*
+			 * (ToBeImplemented) Checks for whether the word is in the database or not, and if
+			 * not, finds closest possible replacement
+			 */
+			function validWord(sw) {
+				
+			}
+			
+			/*
+			 * Main search function for when the sought after word is not within the wordwheel's
+			 * range. Contains a basic check for when no dictionary entries are returned, and uses
+			 * the wordwheel's findings to get data for a new word.
+			 */
+			function search(sw) {
+				var headword_done = false;
+				var wordwheel_done = false;
+				var not_found = false;
+				var data;
+				$("li").unbind();
+				$("#notices").html("");
+				
+				$("#result").fadeOut("slow", function(){
+					$.get("/cgi-bin/logeion/headword.py", {search_term : sw}, function(data){
+						$("#headword").html(sw);
+						if (data.substring(0, 4) == "<p>0") {
+							if (wordwheel_done) {
+								sw = $("#w30").html();
+								$.get("/cgi-bin/logeion/headword.py", {search_term : sw}, function(data){
+									$("#headword").html(sw);
+									api.getContentPane().html(data);
+									$("#result").fadeTo("slow", 1, function(){
+										readyPage();
+									});
+									api.reinitialise();
+								});
+							}
+							else {
+								not_found = true;
+							}
+						}
+						else {
+							api.getContentPane().html(data);
+							$("#result").fadeTo("slow", 1, function(){
+								headword_done = true;
+								if (wordwheel_done) {
+									readyPage();
+								}
+							});
+							api.reinitialise();
+						}
+					});
+				});	
+				
+				$("#wordwheel_container").slideUp("slow", function(){
+					$.get("/cgi-bin/logeion/wordwheel.py", {search_term : sw}, function(data){
+						data = data.replace(/(\r\n|\n|\r)/gm,"")
+						data = JSON.parse(data);
+						$("#wordwheel").html(data.ww);
+						$("#notices").html(data.notice);
+						$("#wordwheel_container").slideDown("slow", function(){
+							wordwheel_done = true;
+							if (headword_done) {							
+								readyPage();
+							}
+							if (not_found) {
+								sw = $("#w30").html();
+								$.get("/cgi-bin/logeion/headword.py", {search_term : sw}, function(data){
+									$("#headword").html(sw);
+									api.getContentPane().html(data);
+									$("#result").fadeTo("slow", 1, function(){
+										readyPage();
+									});
+									api.reinitialise();
+								});
+								getTextbook(sw);
+								getCollocations(sw);
+								getFrequencies(sw);
+							}
+						});
+					});
+				});
+			}
+			
+			/* 
+			 * Secondary search function for when the word is clicked in the wordwheel or
+			 * just happens to be within the wordwheel's range when it is searched for by
+			 * other means.
+			 */
+			function wheel(sw, num) {		
+				var headword_done = false;
+				var wordwheel_done = false;
+				$("li").unbind();
+				$("#notices").html("");
+				
+				$("#result").fadeTo("slow", 0, function(){
+					$.get("/cgi-bin/logeion/headword.py", {search_term : sw}, function(data){
+						$("#headword").html(sw);
+						//$("#entries").html(data);
+						api.getContentPane().html(data);
+						$("#result").fadeTo("fast", 1, function(){
+							headword_done = true;
+							if (wordwheel_done) {
+								readyPage();
+							}
+						});
+						api.reinitialise();
+					});
+				});
+				
+				//$("#previous_container:hidden").show("slide", { direction: "right" }, "slow");
+				//$("#textbook_container:hidden").show("slide", { direction: "right" }, "slow");
+				
+				var diff = num - $("#w30").attr("id").slice(1);
+
+				var i = 0;
+										
+				if (diff < 0) {
+					$("#w30").css("cursor", "pointer");
+					$("#w" + (30 + diff)).css("cursor", "auto");
+					for (i = 60; i >= 0; i--) {
+						$("#w" + i).attr("id", "w" + (i - diff));			
+					}
+					
+					$("li.other_hws").animate({
+						top: "-=" + diff * 21
+					}, 600);
+					
+					$("li.other_hws").queue(function(){
+						$("li.other_hws").stop(true);
+						$.get("/cgi-bin/logeion/partial_wordwheel.py", {search_term : sw, difference: diff}, function(data){
+							for (i = 0; i < -diff; i++) {
+								$("#w" + (60 - (diff + i))).remove();
+							}
+							$("#wordwheel").prepend(data);
+							$("li.other_hws").css("top", "-315px");
+							wordwheel_done = true;
+							if (headword_done) {
+								readyPage();
+							}
+						});
+					});
+				}
+				else {
+					$("#w30").css("cursor", "pointer");
+					$("#w" + (30 + diff)).css("cursor", "auto");
+					for (i = 0; i <= 60; i++) {
+				    	if (i - diff >= 0) {
+				       		$("#w" + i).attr("id", "w" + (i - diff));
+                       	}
+					}						
+						
+					$("li.other_hws").animate({
+						top: "-=" + diff * 21
+					}, 600);
+					
+					$("li.other_hws").queue(function(){
+						$("li.other_hws").stop(true);
+						$.get("/cgi-bin/logeion/partial_wordwheel.py", {search_term : sw, difference: diff}, function(data){
+							for (i = 0; i < diff; i++) {
+								$("#w" + i).remove();
+							}
+							$("#wordwheel").append(data);
+							$("li.other_hws").css("top", "-315px");
+							wordwheel_done = true;
+							if (headword_done) {
+								readyPage();
+							}
+						});
+					});
+				}
+			}
+
+			/*
+			 * Makes sure that all full and empty widgets are displayed or not as they should
+			 * be and reactivates all links (wordwheel words, search button, etc.) after being
+			 * deactivated in the search process
+			 */
+			function readyPage() {
+				$("#previous_container:hidden").show("slide", { direction: "right" }, "slow");
+				if ($("#textbook").html() != "") {
+					$("#textbook_container:hidden").show("slide", { direction: "right" }, "slow");
+				}
+				else {
+					$("#textbook_container:visible").hide("slide", { direction: "right" }, "slow");
+				}
+				if ($("#collocations").html() != "") {
+					$("#collocations_container:hidden").show("slide", { direction: "right" }, "slow");
+				}
+				else {
+					$("#collocations_container:visible").hide("slide", { direction: "right" }, "slow");
+				}
+				if ($("#frequencies").html() != "") {
+					$("#frequencies_container:hidden").show("slide", { direction: "right" }, "slow");
+				}
+				else {
+					$("#frequencies_container:visible").hide("slide", { direction: "right" }, "slow");
+				}
+				for (var i = 0; i <= 60; i++) {
+					if ($("#w" + i).html() == "" || i == 30) {
+						$("#w" + i).unbind();
+						$("#w" + i).css("cursor", "auto");
+					}
+					else {
+						$("#w" + i).click(function(){
+							searchWrapper($(this).html(), $(this).attr("id").slice(1));
+						});
+						$("#w" + i).css("cursor", "pointer");
+					}
+				}
+
+				for (var i = 0; i <= 10; i++) {
+					if ($("#p" + i).html() != "") {
+						$("#p" + i).click(function(){
+							searchWrapper($(this).html(), -1);
+							/*sw = $(this).html();
+							if (sw == $("#w30").html()) {
+								return;
+							}
+							else {
+								document.title = sw;
+								getTextbook(sw);
+								getCollocations(sw);
+								getFrequencies(sw);
+								var found = checkInWordwheel(sw);
+								if (found == -1) {
+									search(sw);
+								}
+								else {
+									wheel(sw, found);
+								}
+								document.title = sw;
+								if (!supports_history_api()) { return; }
+								history.pushState(null, null, "index.html#" + sw);
+							}*/
+						});
+						$("#p" + i).css("cursor", "pointer");
+					}
+				}
+
+				$('parse').qtip({
+					position: {
+						my: 'top center',
+						at: 'bottom center'
+					},
+					style: {
+						classes: 'ui-tooltip-logeion ui-tooltip-shadow'
+					}
+				});
+				
+				loaded = false;
+			}
+			
+			/*
+			 * Checks that search word is not the currently displayed word, and, if not,
+			 * procedes to check whether to refresh word wheel entirely or spin to a word
+			 * within its bounds, updating all the other information as well. If HTML5
+			 * history actions are possible, push this new state into the history queue.
+			 */
+			function searchWrapper(sw, wheelClick) {
+				if (sw == "") {
+					return false;
+				}
+				if ($("#w30").html() != null && sw == $("#w30").html()) {
+					//alert("That is the current word.");
+					return false;
+				}
+				else {
+					if (wheelClick != -1) {
+						wheel(sw, wheelClick);
+					}
+					else {
+						var found = checkInWordwheel(sw);
+						if (found == -1) {
+							search(sw);
+						}
+						else {
+							wheel(sw, found);
+						}
+					}
+					
+					addToPrev(sw);
+					getTextbook(sw);
+					getCollocations(sw);
+					getFrequencies(sw);
+					document.title = sw;
+					if (!supports_history_api()) { return; }
+					history.pushState(null, null, "index.html#" + sw);
+				}
+				return true;
+			}
+			
+			/*
+			 * Returns wordwheel position if the search word is found between 10 and 30
+			 */
+			function checkInWordwheel(sw) {
+				var found = -1;
+				
+				for (i = 15; i <= 45; i++) {
+					if (sw == $("#w" + i).html()) {
+						found = i;
+						break;
+					}
+				}
+				
+				return found;
+			}
+
+			function addToPrev(sw) {
+				var i = 0;
+				for (i = 9; i > 0; i--) {
+					$("#p" + i).html($("#p" + (i - 1)).html());
+				}
+				$("#p0").html(sw);
+			}
+			
+			function getTextbook(sw) {
+				$.get("/cgi-bin/logeion/textbook.py", {search_term : sw}, function(data){
+					$("#textbook").html(data);
+				});
+			}
+			
+			function getCollocations(sw) {
+				$.get("/cgi-bin/logeion/collocation.py", {search_term : sw}, function(data){
+					$("#collocations").html(data);
+				});
+				//$("#collocations").html("");
+			}
+			
+			function getFrequencies(sw) {
+				$.get("/cgi-bin/logeion/frequency.py", {search_term : sw}, function(data){
+					$("#frequencies").html(data);
+				});
+				//$("#frequencies").html("");
+			}
+
+			/*
+			 * Resets the entire page
+			 */
+			function resetAll() {
+				$("li").unbind();
+				$("li.prev_hws").css("cursor", "auto");
+				$("#result").fadeTo("slow", 0, function(){
+					$("#headword").html("");
+					$("#notices").html("");
+					api.getContentPane().html("");
+				});
+				$("#wordwheel_container").slideUp("slow", function(){
+					for (i = 0; i <= 60; i++) {
+						$("#w" + i).html("");
+					}
+				});
+				$("#previous_container:visible").hide("slide", { direction: "right" }, "slow", function() {
+					for (i = 0; i <= 9; i++) {
+						$("#p" + i).html("");
+					}
+				});
+				$("#textbook_container:visible").hide("slide", { direction: "right" }, 0, function(){
+					$("#textbook").html("");
+				});
+				$("#collocations_container:visible").hide("slide", { direction: "right" }, 0, function(){
+					$("#collocations").html("");
+				});
+				$("#frequencies_container:visible").hide("slide", { direction: "right" }, 0, function(){
+					$("#frequencies").html("");
+				});
+				$("#search_word").val("");
+			}
+		</script>
+		
+	</body>
+</html>

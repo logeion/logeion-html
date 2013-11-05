@@ -1,0 +1,185 @@
+/* encoding="UTF-8"
+
+Du Cange TEI, direct rendering with CSS
+ 
+Tested on :
+* Oxygen
+* Firefox
+To test :
+* XXE
+* 
+
+@namespace "http://www.tei-c.org/ns/1.0";
+ */
+
+
+
+/* strip */
+teiHeader,
+cb,
+pb {
+  display:none;
+}
+/* Global presentation */
+TEI {
+  padding:1em;
+}
+
+/* classical default blocks */
+TEI, 
+text,
+front,
+group,
+back,
+body,
+l,
+p,
+head,
+cit,
+quote {
+  display:block;
+}
+/* tables */
+table {
+  text-align: center;
+  display: table;
+  margin: 1em
+}
+table > head{
+    display:table-caption;
+    font-style: italic;
+    margin-bottom: 6pt;
+}
+row {
+  display: table-row;
+}
+cell {
+  display: table-cell;
+  /********************************************* Modif Guillaume
+  border: 1px solid #EEEFEE;*/
+  border: 1px solid #dadada;
+  padding: 3px;
+  color: inherit;
+  background-color:inherit;
+}
+/* lists */
+list {
+  display: block;
+  list-style-type: disc;
+  list-style-position: outside;
+  margin-bottom: 1em;
+  margin-left: 2em;
+  margin-top: 1em;
+}
+item {
+  display: list-item;
+  margin-left: 12pt;
+}
+
+/* default rendering */
+*[rend="b"] {
+  font-weight:bold;
+}
+*[rend="i"] {
+  font-style:italic;
+}
+*[rend="sc"] {
+  font-variant:small-caps;  /* noXXE */
+}
+*[rend="sup"] {
+  vertical-align: super;
+  font-size:smaller;
+}
+*[rend="sub"] {
+  vertical-align: sub;
+  font-size:smaller;
+}
+*[rend="u"] {
+  text-decoration: underline;
+}
+*[xml|lang="grc"] {
+  font-family: "Arial Unicode MS", "Georgia Greek", "DejaVu Serif";
+}
+/* inlines */
+mentioned,
+q {
+  font-style:italic;
+}
+ref {
+  /********************************************* Modif Guillaume
+  color:#66B;*/
+  color:#666699;  
+}
+
+/* specific to Du Cange */
+entry {
+  display:block;
+  margin-top:1em;
+  padding-top:1em;
+  border-top: 1px solid #CCCCCC;
+  max-width:80ex;
+}
+dictScrap {
+  display:block;
+  margin-top:1em;
+  font-family:"Trebuchet MS", "Verdana", sans-serif;
+  font-size:13px;
+  color:#333333;
+}
+quote {
+  /* 
+    font-family: Palatino, "Georgia", "DejaVu Serif",Times, "Times New Roman", serif; 
+    color:#006532;
+    padding-bottom:0.5ex;
+    padding-left:0.5ex;
+    background-color:#EEEEEE;
+  */
+  font-size:14px;
+  text-align:justify;
+  color:#000000;
+  padding-top:0.5ex;
+  padding-bottom:0.5ex;
+  padding-left:0.5ex;
+  margin-left:3px;
+  border-left:2px solid #FFCCCC;
+  line-height:150%;
+}
+quote note {
+  font-style:italic;
+}
+dictScrap:before {
+  content:'◊ ';
+  font-weight:bold;
+  color:#888888;
+  font-family:monospace, sans-serif;
+}
+dictScrap form {
+  display:inline;
+  /********************************************* Modif Guillaume
+  color:blue;*/
+  color:#A73136;
+ 
+}
+form {
+  color:#A73136;
+}
+ref {
+  font-style:italic;
+}
+
+/* 
+for edition
+ref:before{
+    color: gray;
+    content:'[' attr(target) attr(cRef) ' ';
+}
+ref:after{
+    color: gray;
+    content:']';
+}
+DOUTE {
+  display:block;
+  color:#FF0000;
+  background-color:#FFFFCC;
+}
+*/

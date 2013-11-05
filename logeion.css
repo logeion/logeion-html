@@ -1,0 +1,49 @@
+* {
+    padding:0; 
+    margin:0; 
+    }
+
+
+ul {
+  list-style: none;
+
+}
+
+div {
+    clear:both; 
+}
+
+.dico-name {
+    padding-top:20px; 
+    color:gray;
+    font-size:18px;
+}
+/**.entry {
+    padding-bottom:20px;
+}
+**/
+
+li {
+    clear:left; 
+}
+.bullet {
+    width:5%; 
+    float:left; 
+}
+.content {
+    width:95%;    
+    float:left; 
+
+ }
+ 
+ ul
+  {
+  margin-left: 20px;
+  padding-left: 0;
+  }
+li
+  {
+  margin: 0;
+  padding: 0;
+  }
+//span { float: left; width: 2em; }
