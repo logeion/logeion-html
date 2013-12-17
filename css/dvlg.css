@@ -8,6 +8,21 @@
 .span-10 {width:1000px;}
 .span-12 {width:1200px;}
 
+<<<<<<< HEAD
+=======
+@font-face {
+    font-family: 'NewAthenaUnicodeRegular';
+    src: url('newathu403-webfont.woff') format('woff');
+}
+
+* {
+    font-family: "Helvetica", "Arial", "Lucida Grande", sans-serif, "NewAthenaUnicodeRegular";
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+}
+
+>>>>>>> 880e40cbd8d15bb6d533347453b0ae2ae4a3aa54
 html { height: 100%; }
 
 body {
@@ -458,6 +473,52 @@ lword:hover {
   background-color: #EFE4BD;
   padding: 10px;
   border-top: solid 1px grey;
+  overflow: auto;
+}
+
+.dico-name {
+    padding-top:20px; 
+    color:gray;
+    font-size:18px;
+}
+/**.entry {
+    padding-bottom:20px;
+}
+**/
+
+li {
+    clear:left; 
+    list-style-type: none;
+}
+.bullet {
+    width:5%; 
+    float:left; 
+}
+.content {
+    width:95%;    
+    float:left; 
+
+ }
+ 
+ ul
+  {
+  margin-left: 20px;
+  padding-left: 0;
+  }
+li
+  {
+  margin: 0;
+  padding: 0;
+  }
+
+entry sense {
+    font-weight: bold;
+    display: block;
+    padding-top: 5px;
+}
+
+cit, def {
+    font-weight: normal;
 }
 
 /*
