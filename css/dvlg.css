@@ -8,6 +8,18 @@
 .span-10 {width:1000px;}
 .span-12 {width:1200px;}
 
+@font-face {
+    font-family: 'NewAthenaUnicodeRegular';
+    src: url('newathu403-webfont.woff') format('woff');
+}
+
+* {
+    font-family: "Helvetica", "Arial", "Lucida Grande", sans-serif, "NewAthenaUnicodeRegular";
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+}
+
 html { height: 100%; }
 
 body {
@@ -496,7 +508,15 @@ li
   padding: 0;
   }
 
+entry sense {
+    font-weight: bold;
+    display: block;
+    padding-top: 5px;
+}
 
+cit, def {
+    font-weight: normal;
+}
 
 
 /*
