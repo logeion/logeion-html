@@ -4,6 +4,9 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>Logeion</title>
 		<link rel="stylesheet" type="text/css" href="css/dvlg.css" />
+        <!--link rel="stylesheet" type="text/css" href="css/dge.css" /-->
+        <link rel="stylesheet" type="text/css" href="css/ducange.css" />
+>>>>>>> 880e40cbd8d15bb6d533347453b0ae2ae4a3aa54
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.8.14.custom.css" />
 		<link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.css" />
 		<link rel="stylesheet" type="text/css" href="css/jquery.qtip.css" />
@@ -111,7 +114,7 @@
 				</div>
 
 				<div id="right_side">				
-					<div id="previous_container" class="right_container">
+					<!--div id="previous_container" class="right_container">
 						<div id="previous_title" class="right_title">Previous</div>
 						<ol id="previous">
 							<li id="p0" class="prev_hws"></li>
@@ -125,7 +128,7 @@
 							<li id="p8" class="prev_hws"></li>
 							<li id="p9" class="prev_hws"></li>
 						</ol>
-					</div>
+					</div-->
 				
 					<div id="frequencies_container" class="right_container">
 						<div id="frequencies_title" class="right_title">Frequencies</div>
@@ -226,7 +229,7 @@
 				 * after the hash mark in the url, searches for the word
 				 */
 				$("#wordwheel_container").hide();
-				$("#previous_container").hide();
+				/*$("#previous_container").hide();*/
 				$("#frequencies_container").hide();
 				$("#textbook_container").hide();
 				$("#collocations_container").hide();
@@ -675,7 +678,7 @@
 			 * deactivated in the search process
 			 */
 			function readyPage() {
-				$("#previous_container:hidden").show("slide", { direction: "right" }, "slow");
+				/*$("#previous_container:hidden").show("slide", { direction: "right" }, "slow");*/
 				if ($("#textbook").html() != "") {
 					$("#textbook_container:hidden").show("slide", { direction: "right" }, "slow");
 				}
@@ -848,11 +851,11 @@
 						$("#w" + i).html("");
 					}
 				});
-				$("#previous_container:visible").hide("slide", { direction: "right" }, "slow", function() {
+				/*$("#previous_container:visible").hide("slide", { direction: "right" }, "slow", function() {
 					for (i = 0; i <= 9; i++) {
 						$("#p" + i).html("");
 					}
-				});
+				});*/
 				$("#textbook_container:visible").hide("slide", { direction: "right" }, 0, function(){
 					$("#textbook").html("");
 				});
