@@ -518,6 +518,17 @@ cit, def {
     font-weight: normal;
 }
 
+/* Two properties for DGE */
+
+div[id^=DGE].entry entry sense def {
+    font-style: italic;
+}
+
+/* TODO: make this actually show up */
+div[id^=DGE].entry entry quote[xml|lang=spa] {
+    font-style: italic;
+}
+
 
 /*
 syn:hover {

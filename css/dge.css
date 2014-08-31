@@ -1,0 +1,770 @@
+/**
+<h1>DGE site, presentation</h1>
+
+Structure of this file : from generic to specific (last writing win)
+
+ * fonts
+ * default html
+ * generic classes for simple text
+ * classes for dictionary article
+ * layout
+
+ 
+ 
+<h2>Fonts</h2>
+
+*/
+/* Fonst to download, for greek */
+/* [FG] seems hard for the network for now, try to download from Google */
+div[id^=DGE][class=entry] article {
+  @font-face {
+    font-family: 'NewAthenaUnicodeRegular';
+    src: url("newathu403-webfont.woff") format("woff"); }
+
+  /* Default font */
+  /* Interface font */
+  /* Greek font */
+  /* Serif font */
+  /**
+  <h2>HTML generic</h2>
+   
+   Some html elements are interpreted in the context of dictionaries.
+   */
+  /* needed hack for layout */
+  /* IE, DONOT width:100%; */
+  /* seems needed to not have a scrollbar in some places */
+  /* Restore font-size inheritence */
+  /* Default tables with no cellspacing no cellpadding */
+  /* lien version langues*/
+  /* No border around image in a link */
+  /*  */
+  /* strip auto english quotee in firefox */
+  /* Used for bullets senses */
+  /* Say that a <q> in a <blockquote> is the quote, and <cite> is a reference */
+  /** definition and context translation */
+  /*no more used
+  dfn q {
+    font-style:normal;
+    color: black;
+  }*/
+  /**normal in translations*/
+  /**
+  <h2>text classes</h2>
+  */
+  /**
+  <h2>Dictionary entry</h2> 
+   */
+  /* Sense hilited */
+  /* blockquote container with left border */
+  /** short view, no quotes */
+  /* For dev, show text to index */
+  /*note not in italic*/
+  /* ? no more Implemented */
+  /* add a line break for each variant 
+  .variant:before {
+    content: "";
+    display:block;
+  }*/
+  /*.gram {
+    font-size: 24px;
+  }*/
+  /* label in articles */
+  /* Bibliographic codes */
+  /* related reference (as a biblio ref, or lemma pointer ) */
+  /* before the first bibl, an rempty element, maybe used as a spacer or a break line */
+  /* Cross reference */
+  /* Lemma link in a search result */
+  /*no underline on morphological labels*/
+  /* num in cross reference */
+  /* no colors in result snippet */
+  /**address tag adaptated*/
+  /**
+   * Layout
+   */
+  /* nav without search form in site */
+  /* the default value in input, lines should be separated to work */
+  /* tabs in sidebar */
+  /* tabs in header */
+  /* the first tab */
+  /* the tabs in left bar */
+  /* the button */
+  /* A bibl line in the nav pannel */
+  /* Reproduce the <bibl> style*/
+  /* colors of lemmas exact and related in Textos*/
+  /* the tree in the site */
+  /* conserver dès le premier niveau */ }
+  div[id^=DGE][class=entry] article body {
+    font-family: "Palatino Linotype", "Times New Roman", 'NewAthenaUnicodeRegular', serif;
+    font-size: 15px; }
+  div[id^=DGE][class=entry] article #footer,
+  div[id^=DGE][class=entry] article #nav,
+  div[id^=DGE][class=entry] article #langBar,
+  div[id^=DGE][class=entry] article .tabs,
+  div[id^=DGE][class=entry] article .num,
+  div[id^=DGE][class=entry] article .link {
+    font-family: "Arial Unicode MS", sans-serif; }
+  div[id^=DGE][class=entry] article body.lemmas a, div[id^=DGE][class=entry] article body.inverso a, div[id^=DGE][class=entry] article #DGE, div[id^=DGE][class=entry] article .grc, div[id^=DGE][class=entry] article #home, div[id^=DGE][class=entry] article #header, div[id^=DGE][class=entry] article .lemma, div[id^=DGE][class=entry] article #form input, div[id^=DGE][class=entry] article .prev, div[id^=DGE][class=entry] article .next {
+    font-family: "Palatino Linotype", "Times New Roman", NewAthenaUnicodeRegular, serif; }
+  div[id^=DGE][class=entry] article q,
+  div[id^=DGE][class=entry] article blockquote,
+  div[id^=DGE][class=entry] article .cit {
+    font-family: "Palatino Linotype", Times, "Georgia", Roman, FreeSerif,  "DejaVu Serif", serif; }
+  div[id^=DGE][class=entry] article html, div[id^=DGE][class=entry] article body {
+    height: 100%;
+    margin: 0;
+    padding: 0; }
+  div[id^=DGE][class=entry] article * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box; }
+  div[id^=DGE][class=entry] article iframe {
+    margin-bottom: -5px;
+    margin: 0;
+    padding: 0; }
+  div[id^=DGE][class=entry] article table,
+  div[id^=DGE][class=entry] article pre {
+    font-size: inherit; }
+  div[id^=DGE][class=entry] article table {
+    border-spacing: 0;
+    border-collapse: collapse; }
+  div[id^=DGE][class=entry] article td,
+  div[id^=DGE][class=entry] article th {
+    padding: 0; }
+  div[id^=DGE][class=entry] article div.link {
+    float: right; }
+  div[id^=DGE][class=entry] article a img {
+    border: none; }
+  div[id^=DGE][class=entry] article sup,
+  div[id^=DGE][class=entry] article sub {
+    height: 0;
+    line-height: 1.2em;
+    vertical-align: baseline;
+    position: relative;
+    z-index: inherit;
+    font-variant: normal;
+    font-size: 75%; }
+  div[id^=DGE][class=entry] article sup {
+    _vertical-align: top;
+    bottom: 1.2ex;
+    font-size: 0.58em; }
+  div[id^=DGE][class=entry] article sub {
+    _vertical-align: bottom;
+    top: .5ex; }
+  div[id^=DGE][class=entry] article q {
+    quotes: "" ""; }
+  div[id^=DGE][class=entry] article tt {
+    font-family: "DejaVu Sans Mono", monospace; }
+  div[id^=DGE][class=entry] article h1 {
+    color: #B9121A;
+    font-weight: normal;
+    margin-top: 1ex;
+    margin-right: 1ex; }
+  div[id^=DGE][class=entry] article h1 a {
+    color: inherit; }
+  div[id^=DGE][class=entry] article h2 {
+    color: #006040; }
+  div[id^=DGE][class=entry] article h3 {
+    color: #B91219; }
+  div[id^=DGE][class=entry] article h4 {
+    color: #004080; }
+  div[id^=DGE][class=entry] article menu {
+    font-size: 13px;
+    list-style-type: none; }
+  div[id^=DGE][class=entry] article menu li {
+    list-style-type: none; }
+  div[id^=DGE][class=entry] article menu a {
+    text-decoration: none;
+    color: #333; }
+  div[id^=DGE][class=entry] article menu {
+    padding: 0;
+    margin: 1ex 0px 1ex 1.5em; }
+  div[id^=DGE][class=entry] article menu menu {
+    margin-left: 1em;
+    padding-left: 1ex; }
+  div[id^=DGE][class=entry] article a {
+    text-decoration: none; }
+  div[id^=DGE][class=entry] article a:hover {
+    text-decoration: underline; }
+  div[id^=DGE][class=entry] article a:focus {
+    outline: none; }
+  div[id^=DGE][class=entry] article form {
+    margin: 0; }
+  div[id^=DGE][class=entry] article form label {
+    white-space: nowrap; }
+  div[id^=DGE][class=entry] article hr {
+    color: #7698C9;
+    border-top: none; }
+  div[id^=DGE][class=entry] article hr.entry {
+    margin: 4em;
+    background-color: #7698C9; }
+  div[id^=DGE][class=entry] article p {
+    text-align: justify;
+    padding-right: 4em; }
+  div[id^=DGE][class=entry] article body.lemmas p {
+    text-align: left;
+    margin: 1ex;
+    padding: 0; }
+  div[id^=DGE][class=entry] article p.small {
+    font-size: 12px; }
+  div[id^=DGE][class=entry] article img.pub {
+    margin: 30px 30px 20px 0px; }
+  div[id^=DGE][class=entry] article .clear {
+    clear: both; }
+  div[id^=DGE][class=entry] article blockquote q {
+    display: block; }
+  div[id^=DGE][class=entry] article dfn {
+    font-style: italic;
+    font-size: 105%;
+    color: #B9121B; }
+  div[id^=DGE][class=entry] article .tr {
+    font-family: "Palatino Linotype", Times, "Georgia", Roman, FreeSerif,  "DejaVu Serif", serif; }
+  div[id^=DGE][class=entry] article dfn i {
+    font-style: normal;
+    color: black;
+    /*font-family:"Arial Unicode MS", sans-serif;*/ }
+  div[id^=DGE][class=entry] article .tr i {
+    font-style: normal;
+    color: black;
+    /*font-family:"Arial Unicode MS", sans-serif;*/ }
+  div[id^=DGE][class=entry] article .b {
+    font-weight: bold; }
+  div[id^=DGE][class=entry] article .cit a:hover {
+    background: white; }
+  div[id^=DGE][class=entry] article .entry div.hilite,
+  div[id^=DGE][class=entry] article mark {
+    background: #FFFF80; }
+  div[id^=DGE][class=entry] article div.entry {
+    /* margin here will modifiy container */
+    padding: 0 0 1em 0; }
+  div[id^=DGE][class=entry] article div.sense {
+    margin-bottom: 1em;
+    padding: 0.5ex 0 0.5ex 1ex; }
+  div[id^=DGE][class=entry] article .sense .sense {
+    margin-top: 0.5em;
+    text-indent: 2ex; }
+  div[id^=DGE][class=entry] article .sense .sense .sense {
+    text-indent: 4ex; }
+  div[id^=DGE][class=entry] article .sense .sense .sense .sense {
+    text-indent: 6ex; }
+  div[id^=DGE][class=entry] article div.p {
+    margin: 1ex 0; }
+  div[id^=DGE][class=entry] article div.lmpgcit {
+    border-left: solid 1px #B9121B;
+    margin-top: 1.5ex; }
+  div[id^=DGE][class=entry] article div.cit {
+    display: inline; }
+  div[id^=DGE][class=entry] article blockquote.cit {
+    background: #F3F3F3;
+    padding: 0.5ex 1ex 0.5ex 1ex;
+    line-height: 105%;
+    /* group more the lines of same <cit> */
+    text-indent: 0;
+    margin: 0 2em 1ex 0;
+    /* to separe 2 <cit>, better as bottom for results */ }
+  div[id^=DGE][class=entry] article .entry blockquote.hilite {
+    background: #DADBEF;
+    /*border-right:solid 5px #2F4F4F;
+    border-left:solid 5px #2F4F4F;*/ }
+  div[id^=DGE][class=entry] article div.short div.lmpgcit {
+    display: none; }
+  div[id^=DGE][class=entry] article div.short div.sense {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0; }
+  div[id^=DGE][class=entry] article div.short div.sense div.sense {
+    margin-top: 0; }
+  div[id^=DGE][class=entry] article .fulltext {
+    color: blue; }
+  div[id^=DGE][class=entry] article em .note {
+    font-style: normal; }
+  div[id^=DGE][class=entry] article div.bibl {
+    text-align: right;
+    font-family: "Arial Narrow", sans-serif;
+    font-size: 90%; }
+  div[id^=DGE][class=entry] article div.form {
+    font-size: 24px;
+    clear: both; }
+  div[id^=DGE][class=entry] article div.morphology, div[id^=DGE][class=entry] article .etym {
+    padding: 0.5em;
+    border: 1px dotted #e6e6e6;
+    text-align: justify;
+    font-size: 14px;
+    background-color: #EEEEEE;
+    color: #333333;
+    overflow: auto;
+    /* for IE7 gradient */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#EEEEEE',GradientType=0);
+    /* for IE */
+    background: -webkit-linear-gradient(top, white, #eeeeee);
+    /* for webkit browsers */
+    background: -moz-linear-gradient(top, white, #eeeeee);
+    /* for firefox 3.6+ */
+    background: o-linear-gradient(top, white, #eeeeee);
+    /* for opera 11.1+ */ }
+  div[id^=DGE][class=entry] article .morphology {
+    margin-top: 1.5em; }
+  div[id^=DGE][class=entry] article .etym {
+    margin-top: 3em; }
+  div[id^=DGE][class=entry] article .alolema, div[id^=DGE][class=entry] article .etimologia {
+    color: #353B90; }
+  div[id^=DGE][class=entry] article .grafia, div[id^=DGE][class=entry] article .DMic {
+    color: #006600; }
+  div[id^=DGE][class=entry] article .prosodia {
+    color: #917C4B; }
+  div[id^=DGE][class=entry] article .morfologia {
+    color: #B9121A; }
+  div[id^=DGE][class=entry] article .orth {
+    font-weight: bold;
+    font-size: 105%; }
+  div[id^=DGE][class=entry] article .lemma, div[id^=DGE][class=entry] article .lemma2 {
+    color: #B9121B;
+    font-size: 24px;
+    line-height: 15px;
+    /* preserve line height */
+    /*margin-right:1ex;*/ }
+  div[id^=DGE][class=entry] article .lemma2 {
+    margin-left: 0.5ex; }
+  div[id^=DGE][class=entry] article .latin {
+    font-style: italic; }
+  div[id^=DGE][class=entry] article .snip .lemma {
+    font-weight: bold;
+    font-size: 16px; }
+  div[id^=DGE][class=entry] article .snip th {
+    padding: 0 1ex; }
+  div[id^=DGE][class=entry] article .variant {
+    line-height: 21px;
+    /* preserve line height */
+    color: #B9121B;
+    /*margin-right:1ex;
+    margin-left: 1ex;*/ }
+  div[id^=DGE][class=entry] article .num {
+    /*background-color:#999;*/
+    color: #353B90;
+       /*/ *border-radius: 3px 3px 3px 3px;
+   -moz-border-radius: 3px;
+-webkit-border-radius: 3px;*/
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0 4px 0 20px; }
+  div[id^=DGE][class=entry] article .start {
+    padding-left: 0; }
+  div[id^=DGE][class=entry] article num + num {
+    padding-right: 3px; }
+  div[id^=DGE][class=entry] article .usage1,
+  div[id^=DGE][class=entry] article .usage2 {
+    font-size: 90%;
+    color: #A38323; }
+  div[id^=DGE][class=entry] article .cit .usg {
+    font-family: "Arial Narrow", sans-serif;
+    font-size: 85%;
+    color: black; }
+  div[id^=DGE][class=entry] article a.bibl {
+    font-family: "Arial Narrow", sans-serif;
+    font-size: 90%;
+    text-decoration: none; }
+  div[id^=DGE][class=entry] article a.exact {
+    color: #A38323; }
+  div[id^=DGE][class=entry] article a.related,
+  div[id^=DGE][class=entry] article body.nav a.related {
+    color: black; }
+  div[id^=DGE][class=entry] article span.listBibl {
+    font-family: "Arial Narrow", sans-serif;
+    padding-left: 1em;
+    /* on another line [2010-04-15] SB : « pas beau »
+    display:block;
+    text-align:right;
+    */ }
+  div[id^=DGE][class=entry] article a.ref {
+    font-weight: bold; }
+  div[id^=DGE][class=entry] article a.grc {
+    color: #B9121B;
+    text-decoration: none; }
+  div[id^=DGE][class=entry] article .morphology a, div[id^=DGE][class=entry] article .etym a {
+    text-decoration: none; }
+  div[id^=DGE][class=entry] article a.ref b {
+    color: #000;
+    font-size: 80%; }
+  div[id^=DGE][class=entry] article div.res {
+    margin: 1em 0 0 0; }
+  div[id^=DGE][class=entry] article address {
+    font-style: normal;
+    font-size: 13px; }
+  div[id^=DGE][class=entry] article #inverso {
+    text-align: right; }
+  div[id^=DGE][class=entry] article body.lemmas,
+  div[id^=DGE][class=entry] article body.inverso {
+    margin: 0;
+    padding: 0 0 1em 0; }
+  div[id^=DGE][class=entry] article body.lemmas a,
+  div[id^=DGE][class=entry] article body.inverso a {
+    padding: 0 1ex 0 1ex;
+    line-height: 117%;
+    text-decoration: none;
+    color: #000000;
+    display: block; }
+  div[id^=DGE][class=entry] article body.lemmas a:hover,
+  div[id^=DGE][class=entry] article body.lemmas a:active,
+  div[id^=DGE][class=entry] article body.lemmas a:focus,
+  div[id^=DGE][class=entry] article body.lemmas a.active,
+  div[id^=DGE][class=entry] article body.lemmas .hilite {
+    text-decoration: none;
+    background: #FFFFFF;
+    font-weight: inherit;
+    color: #B9121B; }
+  div[id^=DGE][class=entry] article body.lemmas a:focus,
+  div[id^=DGE][class=entry] article a.focus {
+    border: #B9121B dotted 1px; }
+  div[id^=DGE][class=entry] article body {
+    background-color: #353b90; }
+  div[id^=DGE][class=entry] article body.article,
+  div[id^=DGE][class=entry] article body.lemmas,
+  div[id^=DGE][class=entry] article body.nav {
+    background: transparent; }
+  div[id^=DGE][class=entry] article body.article {
+    padding: 0 2em 2em 2em; }
+  div[id^=DGE][class=entry] article #aside {
+    color: #333333;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#EEEEEE',GradientType=1);
+    /* for old IE */
+    background-color: #FFFFFF;
+    /* fallback color if gradients are not supported */
+    background-image: -webkit-linear-gradient(left, white, #eeeeee);
+    /* For Chrome and Safari */
+    background-image: -moz-linear-gradient(left, white, #eeeeee);
+    /* For old Fx (3.6 to 15) */
+    background-image: -ms-linear-gradient(left, white, #eeeeee);
+    /* For pre-releases of IE 10*/
+    background-image: -o-linear-gradient(left, white, #eeeeee);
+    /* For old Opera (11.1 to 12.0) */
+    background-image: linear-gradient(to right, white, #eeeeee);
+    /* Standard syntax; must be last */
+    position: absolute;
+    height: 100%;
+    width: 270px;
+    top: 0;
+    bottom: 0px;
+    overflow: hidden;
+    padding: 0; }
+  div[id^=DGE][class=entry] article #header .grad,
+  div[id^=DGE][class=entry] article #footer {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEEEEE', endColorstr='#353b90',GradientType=1);
+    /* for IE */
+    background-color: #FFFFFF;
+    /* fallback color if gradients are not supported */
+    background-image: -webkit-linear-gradient(left, #eeeeee, #353b90);
+    /* For Chrome and Safari */
+    background-image: -moz-linear-gradient(left, #eeeeee, #353b90);
+    /* For old Fx (3.6 to 15) */
+    background-image: -ms-linear-gradient(left, #eeeeee, #353b90);
+    /* For pre-releases of IE 10*/
+    background-image: -o-linear-gradient(left, #eeeeee, #353b90);
+    /* For old Opera (11.1 to 12.0) */
+    background-image: linear-gradient(to right, #eeeeee, #353b90);
+    /* Standard syntax; must be last */ }
+  div[id^=DGE][class=entry] article #header .grad,
+  div[id^=DGE][class=entry] article #header {
+    height: 85px; }
+  div[id^=DGE][class=entry] article #header {
+    margin: 0px 0px 0px 270px; }
+  div[id^=DGE][class=entry] article #header .grad {
+    margin-right: 90px;
+    color: #FFFFFF;
+    text-align: right;
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 95%;
+    padding-top: 10px; }
+  div[id^=DGE][class=entry] article #header .grad a {
+    color: #FFFFFF; }
+  div[id^=DGE][class=entry] article #langBar {
+    position: absolute;
+    top: 70px;
+    right: 90px;
+    font-size: 12px; }
+  div[id^=DGE][class=entry] article #langBar a {
+    padding-left: 1ex;
+    padding-right: 1ex;
+    border-right: 1px solid #FFFFFF;
+    text-decoration: none;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px; }
+  div[id^=DGE][class=entry] article #langBar a:hover,
+  div[id^=DGE][class=entry] article #langBar a.active {
+    background: #FFFFFF;
+    color: #888888;
+    text-decoration: none; }
+  div[id^=DGE][class=entry] article #header,
+  div[id^=DGE][class=entry] article #footer,
+  div[id^=DGE][class=entry] article #header a,
+  div[id^=DGE][class=entry] article #footer a {
+    color: #FFFFFF; }
+  div[id^=DGE][class=entry] article #home {
+    height: 63px;
+    padding-left: 24px;
+    line-height: 46px;
+    font-size: 22px; }
+  div[id^=DGE][class=entry] article #home a {
+    font-weight: normal;
+    margin: 0; }
+  div[id^=DGE][class=entry] article #form {
+    text-align: left;
+    padding: 0px 0px 0px 24px;
+    /* height:22px; needed for background */ }
+  div[id^=DGE][class=entry] article #nav {
+    position: absolute;
+    margin: 0;
+    bottom: 23px;
+    top: 85px;
+    left: 24px;
+    right: 0px;
+    border: 1px #7698C9 solid;
+    overflow: auto; }
+  div[id^=DGE][class=entry] article #nav iframe {
+    position: absolute;
+    right: 0; }
+  div[id^=DGE][class=entry] article body.xdge #nav,
+  div[id^=DGE][class=entry] article body.lmpg #nav {
+    border-top: none;
+    top: 112px; }
+  div[id^=DGE][class=entry] article #footer {
+    position: fixed;
+    left: 270px;
+    right: 0px;
+    font-size: 12px;
+    line-height: 200%;
+    height: 24px;
+    padding: 0 0 0 1ex;
+    text-align: center;
+    bottom: 0; }
+  div[id^=DGE][class=entry] article #article {
+    /*
+    margin:0px 22px 24px 270px;
+    padding: 0 0 0 30px;
+    */
+    padding-left: 30px;
+    position: absolute;
+    left: 270px;
+    right: 22px;
+    bottom: 24px;
+    top: 85px;
+    overflow: auto;
+    background-color: #FFFFFF;
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px; }
+  div[id^=DGE][class=entry] article #article iframe {
+    position: absolute;
+    right: 0; }
+  div[id^=DGE][class=entry] article #q {
+    border: none;
+    border-left: 1px #7698C9 solid;
+    border-right: 1px #7698C9 solid;
+    border-bottom: 1px #7698C9 solid;
+    width: 246px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 10px 0 10px;
+    margin: 0;
+    /* IE7 only, box-model pb */
+    *width: 224px; }
+  div[id^=DGE][class=entry] article ::-webkit-input-placeholder {
+    color: #CCC !important;
+    font-style: italic !important;
+    font-weight: normal !important; }
+  div[id^=DGE][class=entry] article :-moz-placeholder {
+    color: #CCC !important;
+    font-style: italic !important;
+    font-weight: normal !important; }
+  div[id^=DGE][class=entry] article :-ms-input-placeholder {
+    color: #CCC !important;
+    font-style: italic !important;
+    font-weight: normal !important; }
+  div[id^=DGE][class=entry] article input.inverso {
+    text-align: right; }
+  div[id^=DGE][class=entry] article #aside .tabs {
+    height: 22px;
+    border-bottom: 1px #7698C9 solid; }
+  div[id^=DGE][class=entry] article #header .tabs {
+    float: left;
+    margin-top: 53px;
+    margin-left: 30px; }
+  div[id^=DGE][class=entry] article #header .tabs a:hover {
+    border-bottom: 1px #7698C9 solid; }
+  div[id^=DGE][class=entry] article #header .tabs a.active,
+  div[id^=DGE][class=entry] article #header .tabs a {
+    border-bottom: 1px transparent solid; }
+  div[id^=DGE][class=entry] article .tabs a,
+  div[id^=DGE][class=entry] article .but,
+  div[id^=DGE][class=entry] article .link {
+    font-size: 13px; }
+  div[id^=DGE][class=entry] article .tabs a {
+    border: 1px transparent solid;
+    border-bottom: 1px #7698C9 solid;
+    height: 22px;
+    display: block;
+    float: left;
+    white-space: nowrap;
+    line-height: 21px;
+    text-decoration: none;
+    padding: 0 1ex 5px 1ex;
+    color: #666666 !important;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px; }
+  div[id^=DGE][class=entry] article .tabs a:hover {
+    border-bottom: 1px #7698C9 solid; }
+  div[id^=DGE][class=entry] article .tabs a.active {
+    border-bottom: 1px #FFFFFF solid; }
+  div[id^=DGE][class=entry] article .tabs a.active,
+  div[id^=DGE][class=entry] article .tabs a:hover {
+    background-color: #FFFFFF;
+    color: #B9121A !important;
+    border-left: 1px #7698C9 solid;
+    border-top: 1px #7698C9 solid;
+    border-right: 1px #7698C9 solid; }
+  div[id^=DGE][class=entry] article .but {
+    border: 1px solid transparent;
+    margin: 1px 2ex;
+    padding: 2px 5px;
+    background-color: transparent;
+    text-decoration: none;
+    line-height: 100%;
+    text-decoration: none;
+    color: #666666 !important;
+    white-space: nowrap;
+    border-radius: 7px; }
+  div[id^=DGE][class=entry] article .but:hover {
+    background-color: #FFFFFF;
+    text-decoration: none;
+    border-color: #7698C9;
+    color: #B9121A !important; }
+  div[id^=DGE][class=entry] article #go {
+    margin: 1em;
+    display: block; }
+  div[id^=DGE][class=entry] article #textos {
+    margin: 1em 0 1em 0; }
+  div[id^=DGE][class=entry] article #textos div {
+    font-family: "Arial Narrow", sans-serif;
+    padding: 0 1ex; }
+  div[id^=DGE][class=entry] article #textos div a {
+    font-family: "Palatino Linotype", NewAthenaUnicodeRegular, serif;
+    color: #A38323; }
+  div[id^=DGE][class=entry] article #textos a.related {
+    color: black; }
+  div[id^=DGE][class=entry] article body.busqueda {
+    margin: 0;
+    padding: 1em 1ex; }
+  div[id^=DGE][class=entry] article body.busqueda input.text {
+    width: 95%; }
+  div[id^=DGE][class=entry] article #DGE,
+  div[id^=DGE][class=entry] article #home a {
+    color: #000000;
+    text-shadow: 1px 1px #FFFFFF; }
+  div[id^=DGE][class=entry] article #DGE {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    text-align: right;
+    display: block; }
+  div[id^=DGE][class=entry] article #DGE:hover,
+  div[id^=DGE][class=entry] article #home a:hover {
+    text-decoration: none;
+    color: #353b90;
+    text-shadow: 1px 1px #FFFFFF; }
+  div[id^=DGE][class=entry] article #footer a img {
+    margin: 1px 2px 0 2px;
+    padding: 2px; }
+  div[id^=DGE][class=entry] article #footer a:hover img {
+    padding: 1px;
+    border: 1px inset #DDDDDD; }
+  div[id^=DGE][class=entry] article .prevnext {
+    border-bottom: 1px dotted #666666;
+    height: 1em;
+    margin-top: 0.4ex;
+    margin-bottom: 3ex; }
+  div[id^=DGE][class=entry] article .prevnext a {
+    color: #666666;
+    background: #FFFFFF;
+    border: 1px #FFFFFF solid;
+    margin-top: 0.2ex;
+    line-height: 110%;
+    border-radius: 5px; }
+  div[id^=DGE][class=entry] article .prevnext a:hover {
+    text-decoration: none;
+    color: #B9121B;
+    background-color: #FBFBFB;
+    border: 1px solid #D6D4D4; }
+  div[id^=DGE][class=entry] article .prevnext .prev {
+    float: left;
+    padding-left: 1px;
+    padding-right: 3px; }
+  div[id^=DGE][class=entry] article .prevnext .next {
+    float: right;
+    padding-right: 1px;
+    padding-left: 3px; }
+  div[id^=DGE][class=entry] article menu.tree {
+    padding: 0 0 0 1ex;
+    margin: 1em 0 1em 0;
+    list-style: none; }
+  div[id^=DGE][class=entry] article .tree a {
+    color: black;
+    text-decoration: none;
+    border-bottom: none; }
+  div[id^=DGE][class=entry] article menu a:hover,
+  div[id^=DGE][class=entry] article .tree a:hover {
+    text-decoration: none;
+    color: #000000;
+    background-color: #FFFFFF; }
+  div[id^=DGE][class=entry] article .tree ul,
+  div[id^=DGE][class=entry] article .tree menu {
+    list-style-type: none;
+    padding: 0 0 0 0 !important;
+    margin: 2px 0 2px 0 !important; }
+  div[id^=DGE][class=entry] article .tree li {
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: 2px 4px;
+    list-style-image: none !important;
+    list-style: none;
+    padding: 1px;
+    border: 1px solid transparent; }
+  div[id^=DGE][class=entry] article .tree li:hover {
+    border-left: dotted 1px #AAA; }
+  div[id^=DGE][class=entry] article .tree li {
+    padding-left: 14px;
+    background-image: url("img/o.png"); }
+  div[id^=DGE][class=entry] article .tree mark,
+  div[id^=DGE][class=entry] article .tree .mark,
+  div[id^=DGE][class=entry] article .tree .hi {
+    background: #FFFFFF; }
+  div[id^=DGE][class=entry] article .tree li.plus {
+    background-image: url("img/plus.png"); }
+  div[id^=DGE][class=entry] article .tree li.minus {
+    background-image: url("img/minus.png"); }
+  div[id^=DGE][class=entry] article .tree .ul {
+    padding: 0.5ex 0.5ex 1ex 1em; }
+  div[id^=DGE][class=entry] article .tree li.minus ul,
+  div[id^=DGE][class=entry] article .tree li.minus .ul,
+  div[id^=DGE][class=entry] article .tree li.minus menu {
+    display: block; }
+  div[id^=DGE][class=entry] article .tree li.plus ul,
+  div[id^=DGE][class=entry] article .tree li.plus .ul,
+  div[id^=DGE][class=entry] article .tree li.plus menu {
+    display: none; }
+  div[id^=DGE][class=entry] article li a.here {
+    background-color: #FFFFFF;
+    font-weight: bold;
+    color: #000; }
+  div[id^=DGE][class=entry] article li.here {
+    background-color: #FFFFFF;
+    color: #000;
+    border: 1px solid #CCCCCC;
+    /* margin-left:-5px; padding-left:5px; pb en tree */ }
+  div[id^=DGE][class=entry] article #nav li.here a:hover {
+    background-color: #EEEEEE; }
+  @media print {
+    div[id^=DGE][class=entry] article #aside,
+    div[id^=DGE][class=entry] article #form,
+    div[id^=DGE][class=entry] article #footer {
+      display: none; }
+    div[id^=DGE][class=entry] article #article {
+      position: static; } }
