@@ -12,7 +12,7 @@ To test :
 @namespace "http://www.tei-c.org/ns/1.0";
  */
 /* strip */
-div[id^=DuCange][class=entry] entry {
+div[id^=DuCange].entry entry {
   /* Global presentation */
   /* classical default blocks */
   /* tables */
@@ -36,35 +36,35 @@ div[id^=DuCange][class=entry] entry {
     background-color:#FFFFCC;
   }
   */ }
-  div[id^=DuCange][class=entry] entry teiHeader,
-  div[id^=DuCange][class=entry] entry cb,
-  div[id^=DuCange][class=entry] entry pb {
+  div[id^=DuCange].entry entry teiHeader,
+  div[id^=DuCange].entry entry cb,
+  div[id^=DuCange].entry entry pb {
     display: none; }
-  div[id^=DuCange][class=entry] entry TEI {
+  div[id^=DuCange].entry entry TEI {
     padding: 1em; }
-  div[id^=DuCange][class=entry] entry TEI,
-  div[id^=DuCange][class=entry] entry text,
-  div[id^=DuCange][class=entry] entry front,
-  div[id^=DuCange][class=entry] entry group,
-  div[id^=DuCange][class=entry] entry back,
-  div[id^=DuCange][class=entry] entry body,
-  div[id^=DuCange][class=entry] entry l,
-  div[id^=DuCange][class=entry] entry p,
-  div[id^=DuCange][class=entry] entry head,
-  div[id^=DuCange][class=entry] entry cit,
-  div[id^=DuCange][class=entry] entry quote {
+  div[id^=DuCange].entry entry TEI,
+  div[id^=DuCange].entry entry text,
+  div[id^=DuCange].entry entry front,
+  div[id^=DuCange].entry entry group,
+  div[id^=DuCange].entry entry back,
+  div[id^=DuCange].entry entry body,
+  div[id^=DuCange].entry entry l,
+  div[id^=DuCange].entry entry p,
+  div[id^=DuCange].entry entry head,
+  div[id^=DuCange].entry entry cit,
+  div[id^=DuCange].entry entry quote {
     display: block; }
-  div[id^=DuCange][class=entry] entry table {
+  div[id^=DuCange].entry entry table {
     text-align: center;
     display: table;
     margin: 1em; }
-  div[id^=DuCange][class=entry] entry table > head {
+  div[id^=DuCange].entry entry table > head {
     display: table-caption;
     font-style: italic;
     margin-bottom: 6pt; }
-  div[id^=DuCange][class=entry] entry row {
+  div[id^=DuCange].entry entry row {
     display: table-row; }
-  div[id^=DuCange][class=entry] entry cell {
+  div[id^=DuCange].entry entry cell {
     display: table-cell;
     /********************************************* Modif Guillaume
     border: 1px solid #EEEFEE;*/
@@ -72,53 +72,53 @@ div[id^=DuCange][class=entry] entry {
     padding: 3px;
     color: inherit;
     background-color: inherit; }
-  div[id^=DuCange][class=entry] entry list {
+  div[id^=DuCange].entry entry list {
     display: block;
     list-style-type: disc;
     list-style-position: outside;
     margin-bottom: 1em;
     margin-left: 2em;
     margin-top: 1em; }
-  div[id^=DuCange][class=entry] entry item {
+  div[id^=DuCange].entry entry item {
     display: list-item;
     margin-left: 12pt; }
-  div[id^=DuCange][class=entry] entry *[rend="b"] {
+  div[id^=DuCange].entry entry *[rend="b"] {
     font-weight: bold; }
-  div[id^=DuCange][class=entry] entry *[rend="i"] {
+  div[id^=DuCange].entry entry *[rend="i"] {
     font-style: italic; }
-  div[id^=DuCange][class=entry] entry *[rend="sc"] {
+  div[id^=DuCange].entry entry *[rend="sc"] {
     font-variant: small-caps;
     /* noXXE */ }
-  div[id^=DuCange][class=entry] entry *[rend="sup"] {
+  div[id^=DuCange].entry entry *[rend="sup"] {
     vertical-align: super;
     font-size: smaller; }
-  div[id^=DuCange][class=entry] entry *[rend="sub"] {
+  div[id^=DuCange].entry entry *[rend="sub"] {
     vertical-align: sub;
     font-size: smaller; }
-  div[id^=DuCange][class=entry] entry *[rend="u"] {
+  div[id^=DuCange].entry entry *[rend="u"] {
     text-decoration: underline; }
-  div[id^=DuCange][class=entry] entry *[xml|lang="grc"] {
+  div[id^=DuCange].entry entry *[xml|lang="grc"] {
     font-family: "Arial Unicode MS", "Georgia Greek", "DejaVu Serif"; }
-  div[id^=DuCange][class=entry] entry mentioned,
-  div[id^=DuCange][class=entry] entry q {
+  div[id^=DuCange].entry entry mentioned,
+  div[id^=DuCange].entry entry q {
     font-style: italic; }
-  div[id^=DuCange][class=entry] entry ref {
+  div[id^=DuCange].entry entry ref {
     /********************************************* Modif Guillaume
     color:#66B;*/
     color: #666699; }
-  div[id^=DuCange][class=entry] entry entry {
+  div[id^=DuCange].entry entry entry {
     display: block;
     margin-top: 1em;
     padding-top: 1em;
     border-top: 1px solid #CCCCCC;
     max-width: 80ex; }
-  div[id^=DuCange][class=entry] entry dictScrap {
+  div[id^=DuCange].entry entry dictScrap {
     display: block;
     margin-top: 1em;
     font-family: "Trebuchet MS", "Verdana", sans-serif;
     font-size: 13px;
     color: #333333; }
-  div[id^=DuCange][class=entry] entry quote {
+  div[id^=DuCange].entry entry quote {
     /* 
       font-family: Palatino, "Georgia", "DejaVu Serif",Times, "Times New Roman", serif; 
       color:#006532;
@@ -135,19 +135,19 @@ div[id^=DuCange][class=entry] entry {
     margin-left: 3px;
     border-left: 2px solid #FFCCCC;
     line-height: 150%; }
-  div[id^=DuCange][class=entry] entry quote note {
+  div[id^=DuCange].entry entry quote note {
     font-style: italic; }
-  div[id^=DuCange][class=entry] entry dictScrap:before {
+  div[id^=DuCange].entry entry dictScrap:before {
     content: '◊ ';
     font-weight: bold;
     color: #888888;
     font-family: monospace, sans-serif; }
-  div[id^=DuCange][class=entry] entry dictScrap form {
+  div[id^=DuCange].entry entry dictScrap form {
     display: inline;
     /********************************************* Modif Guillaume
     color:blue;*/
     color: #A73136; }
-  div[id^=DuCange][class=entry] entry form {
+  div[id^=DuCange].entry entry form {
     color: #A73136; }
-  div[id^=DuCange][class=entry] entry ref {
+  div[id^=DuCange].entry entry ref {
     font-style: italic; }
