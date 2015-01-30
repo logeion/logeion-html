@@ -1,0 +1,285 @@
+/*@import url('MLD Meta.css');*/
+@namespace xml url("http://www.w3.org/XML/1998/namespace");
+
+div[id^=DMLBS].entry {
+    * {display:inline}
+    MLDFASC,entry {font-family:'times new roman', times, serif;
+    font-size:11.5pt;
+    display:block}
+
+    box {display:block;text-align:justify;line-height:1.65;page-break-before:always}
+    box:not([xml|id]):before {content:""}
+    box:before {content:"[ BOX NUMBER: \"attr(xml|id)\" ]";font-family:'Arial Unicode MS', sanserif;font-weight:bold;color:blue}
+    MLDFASC>box:first-child {page-break-before:avoid}
+
+    entry {display:block;padding-top:0.2cm;line-height:1.65}
+    /*entry {display:block;}*/
+    entry[crossref=true] {display:inline;line-height:1.75}
+    entry[crossref=true]+entry[crossref=true] {display:inline} 
+    entry[crossref=true]+entry[crossref=true]:before {content:"\2003\2003"}
+    entry[crossref=true]+entry:before {content:""}
+    entry[crossref=true]>ls>lm[hom]:first-child:before {content:"\a"attr(hom)" ";font-weight:bold;white-space:pre}
+    entry[crossref=true] {font-size:80%}
+    entry[crossref=true]>see:after {content:"."}
+
+    lm[hom]:before {content:attr(hom)" ";font-weight:bold}
+    ls>lm+lm:before {content:", ";font-weight:bold}
+    ls>lm+lm[hom]:before {content:", "attr(hom)" ";font-weight:bold}
+
+    l[fl=true]:before {content:"\2020";font-weight:normal}
+    l[alt]:after {content:" ("attr(alt)")";font-weight:bold}
+    l {font-weight:bold}
+    l+et:before {content:" ["}
+    et:before {content:"["}
+    et:after {content:"]"}
+    et {hyphens:none}
+    dub:before {content:"dub."}
+
+    e[lang]:before {content:attr(lang)" ";font-style:normal}
+    e[lang]:empty:before {content:attr(lang);font-style:normal}
+    e[hom]:not([lang]):before {content:attr(hom)" ";font-style:normal}
+    e[lang][attest="false"]:before {content:attr(lang)" *";font-style:normal}
+    e[attest="false"]:not([lang]):before {content:"*";font-style:normal}
+    e[lang] {font-style:italic}
+    e[lang="CL"],e[lang="LL"],e[lang="ML"],e[lang="Byz."],e[lang="Gk."],e[lang="Mod. Gk."],e[lang="Med. Gk."] {font-style:normal}
+    e:not([lang]):before {content:""}
+
+
+    /* For var sp entries*/
+    sp:before {content:", ";font-style:normal}
+    sp>v:first-child:before {content:"var. sp. of ";font-style:italic}
+    sp>v[hom]:first-child:before {content:"var. sp. of "attr(hom)" ";font-style:italic}
+    sp>ls:first-child:before {content:"var. sp. of ";font-style:italic}
+    sp>ls>lm>l {font-weight:normal}
+    sp>s1:not([snum])>s2:first-child>def:first-child>let:first-child:before {content:"\a\2003";white-space:pre}
+    sp>v+s1:before {content:"\a   "}
+
+    /* For cross ref entries*/
+    entry>see:before {content:" v. "}
+    entry>see[also=true]:before {content:" v. et. "}
+    see>v+v:before {content:", "}
+    see>v[hom]:before {content:attr(hom)" ";font-style:normal}
+    see>v+v[hom]:before {content:", "attr(hom)" ";font-style:normal}
+    see>v[senseref]:after {content:" ("attr(senseref)")"}
+
+    /* xref for quotations */
+    ref>v:before {content:" (v. "}
+    ref>v:after {content:")"}
+    ref>v[hom]:before {content:" (v. "attr(hom)" "}
+    ref>v[senseref]:after {content:" "attr(senseref)")"}
+    ref>v[supinf]:after {content:attr(senseref)" "attr(supinf)")"}
+    ref>v:empty:before {content:""}
+    ref>v[senseref]:empty:before {content:" (v. "}
+    ref>v:empty:after {content:"[\2192]"}
+    ref>v[senseref]:empty:after {content:attr(senseref)")"}
+    ref>v[supinf]:empty:after {content:attr(senseref)" "attr(supinf)")"}
+
+
+    /* xref in definitions*/
+    def>v {font-style:italic}
+    def>v[hom]:before {content:attr(hom)" ";font-style:normal}
+    def>v[senseref]:after {content:" "attr(senseref);font-style:normal}
+    def>v[supinf]:before {content:attr(senseref);font-style:normal}
+    def>v[supinf]:after {content:" "attr(supinf);font-style:italic}
+    def>v[senseref]:empty:after {content:attr(senseref);font-style:normal}
+    def>v[supinf]:empty:before {content:attr(senseref)" ";font-style:normal}
+    def>v[supinf]:empty:after {content:attr(supinf);font-style:italic}
+
+    /* xref in ed note*/
+    ed>v {font-style:normal}
+    ed>v[hom]:before {content:attr(hom)" ";font-style:normal}
+    ed>v[senseref]:after {content:" "attr(senseref);font-style:normal}
+    ed>v[supinf]:before {content:attr(senseref);font-style:normal}
+    ed>v[supinf]:after {content:" "attr(supinf);font-style:normal}
+    ed>v[senseref]:empty:after {content:attr(senseref);font-style:normal}
+    ed>v[supinf]:empty:before {content:attr(senseref)" ";font-style:normal}
+    ed>v[supinf]:empty:after {content:attr(supinf);font-style:normal}
+
+    s1:before {content:", "}
+    s1 {display:inline}
+    /*s1[snum] {display:block;padding-top:0.25cm;text-indent:0.5cm;line-height:1.65}*/
+    s1[snum] {display:block;padding-top:0.25cm;text-indent:0.5cm;line-height:1.3} /* 1.65 was too much */
+    s1[snum]:before {content:attr(snum) " ";font-weight:bold}
+    s1[snum]+s1[snum]:before {content:attr(snum) " ";font-weight:bold}
+
+    s1>fl:before {content:""}
+    s1>fl[query=true]:before {content:"?\00a0";font-style:normal}
+    s1>fl:after {content:"f.\00a0l.";font-style:italic}
+    def>fl:before {content:", or "}
+    def>fl[query=true]:before {content:", or ?\00a0";font-style:normal}
+    def>fl:after {content:"f.\00a0l";font-style:italic}
+
+    s1>def:before {content:""}
+    s1>def:after {content:": "}
+    s2+s2:before {content:"\2003"}
+    s2>def:before {content:""}
+    s2>def:first-child:before {content:""}
+    s2>def[let]:before {content:attr(let)"\2002";font-weight:bold}
+    s2>def[let]:first-child:before {content:attr(let)"\2002";font-weight:bold}
+    s2>def:after {content:"; "}
+    s2>def:last-child:after {content:"."}
+    s2:after {content:""}
+    v+s1>s2>def:first-child:before {content:""}
+
+    addinfo:before {content:"  "}
+    addinfo:after {content:"."}
+    q2>addinfo:before {content:"("}
+    q2>addinfo:after {content:") ";font-weight:normal}
+    addinfo>v {font-style:italic}
+    addinfo>v[hom]:before {content:attr(hom)" ";font-style:normal}
+    addinfo>v[senseref]:after {content:" "attr(senseref);font-style:normal}
+    addinfo>v[supinf]:before {content:attr(senseref);font-style:normal}
+    addinfo>v[supinf]:after {content:" "attr(supinf);font-style:italic}
+    addinfo>v[senseref]:empty:after {content:attr(senseref);font-style:normal}
+    addinfo>v[supinf]:empty:before {content:attr(senseref)" ";font-style:normal}
+    addinfo>v[supinf]:empty:after {content:attr(supinf);font-style:italic}
+
+
+    v+s1>s2>def:first-child:before {content:""}
+
+    /*q1 {display:block;text-indent:0.5cm;padding-top:0.1cm;font-size:90%;line-height:1.65}*/
+    q1 {display:block;text-indent:0.5cm;padding-top:0.1cm;font-size:90%;line-height:1.3} /* 1.65 was too much */
+    q1 * {font-size:0.9rem} /* Only way font-size would work on children */
+
+    q2:after {content:"."}
+    q2+q2[let]:before {content:"\2003\2003" attr(let)"\2002";font-weight:bold}
+    q2+q2:before {content:"\2003\2003";font-weight:bold}
+    q2[let]:before {content:attr(let)"\2002";font-weight:bold}
+    q2>qt:last-child>ref:last-child>place:last-child>ibid:last-child:before {content:"Ib";font-style:italic}
+
+    qt {}
+    qt+qt:before {content:"; ";font-weight:normal}
+    qt>ref:only-child>v:only-child:before {content:" etc. (v. "}
+    qt[checkingnotes]:after {content:" { "attr(location)" "attr(checkingnotes)"}";font-family:'Arial Unicode MS', sanserif;color:red}
+
+    date {font-weight:bold}
+    date[type="sub"]:before {content:"s";font-weight:normal}
+    date[type="post"]:before {content:"p";font-weight:normal}
+    date[type="ante"]:before {content:"a";font-weight:normal}
+    date[type="circa"]:before {content:"c";font-weight:normal}
+    date[type="spurious"]:before {content:"\2020";font-weight:normal}
+    date[type="query"]:before {content:"?";font-weight:normal}
+    date[type="spurious-ante"]:before {content:"\2020\00a0\0061";font-weight:normal}
+    date[type="spurious-post"]:before {content:"\2020\00a0p";font-weight:normal}
+    date[type="spurious-circa"]:before {content:"\2020\00a0\0063";font-weight:normal}
+    date[type="query-ante"]:before {content:"?\0061";font-weight:normal}
+    date[type="query-post"]:before {content:"?p";font-weight:normal}
+    date[type="query-circa"]:before {content:"?\0063";font-weight:normal}
+    date:after {content:" "}
+    date[recte]:after {content:" (recte "attr(recte)") ";font-weight:normal}
+
+    insp:before {content:"("}
+    insp:after {content:") "}
+
+    q:before {content:""} /* To cancel out the automatic quoting from user-agent */
+    q:after {content:" "}
+
+    ed:before {content:"["}
+    ed:after {content:"]"} 
+
+    ref {}
+    type {font-style:italic}
+    /* loc+type:before {content:" (";font-style:normal} */
+    type:before {content:"(";font-style:normal}
+    type:after {content:") ";font-style:normal}
+
+    altplace:before {content:" (=\2009";font-style:normal}
+    altplace:after {content:")";font-style:normal}
+    altplace>place+place:before {content:", "}
+
+    au[pseud=true]:before {content:"Ps.-";font-style:italic;font-variant:normal}
+    place au:after {content:" "}
+    au,sc {font-style:normal;font-variant:small-caps}
+
+    place>ibid:last-child:before {content:"Ib.";font-style:italic}
+    place au:last-child:after {content:""}
+
+
+    id:before {content:"Id. ";text-decoration:none;font-weight:normal;font-style:italic}
+
+    def au+wk:before {content:" "}
+    def au+loc:before {content:" "}
+    wk {font-style:italic}
+    /* wk:after {content:" "} */
+    wk+loc:before {content:" "}
+    type>au+wk:before {content:" "}
+    type>au+loc:before {content:" "}
+    type>wk+loc:before {content:" "}
+
+
+    cf:before {content:" (cf. "}
+    cf:after {content:")"}
+    cf>q:after {content:""}
+    cf>date+q:before {content:" "}
+    cf>ref+q:before {content:": "}
+    cf>ref>place>id:before {content:"id. ";text-decoration:none;font-weight:normal;font-style:normal}
+    cf>ref>place>ibid:before {content:"ib. ";font-style:normal}
+    cf>q+*:before {content:"; ";font-weight:normal}
+    cf>*+ref:before {content:"; ";font-weight:normal}
+    cf>ref+ref:before {content:", ";font-weight:normal}
+    cf>q+insp:before {content:"; (";font-weight:normal}
+    cf>ref+date:before {content:": ";font-weight:normal}
+    cf>date[type="sub"]:before {content:"s";font-weight:normal}
+    cf>date[type="post"]:before {content:"p";font-weight:normal}
+    cf>date[type="ante"]:before {content:"a";font-weight:normal}
+    cf>date[type="circa"]:before {content:"c";font-weight:normal}
+    cf>date[type="spurious"]:before {content:"\2020";font-weight:normal}
+    cf>date[type="spurious-ante"]:before {content:"\2020\00a0\0061";font-weight:normal}
+    cf>date[type="spurious-post"]:before {content:"\2020\00a0p";font-weight:normal}
+    cf>date[type="spurious-circa"]:before {content:"\2020\00a0\0063";font-weight:normal}
+    cf>date[type="query"]:before {content:"? ";font-weight:normal}
+    cf>date[type="query-ante"]:before {content:"?\00a0\0061";font-weight:normal}
+    cf>date[type="query-post"]:before {content:"?\00a0p";font-weight:normal}
+    cf>date[type="query-circa"]:before {content:"?\00a0\0063";font-weight:normal}
+    cf>ref+date[type="sub"]:before {content:": s";font-weight:normal}
+    cf>ref+date[type="post"]:before {content:": p";font-weight:normal}
+    cf>ref+date[type="ante"]:before {content:": a";font-weight:normal}
+    cf>ref+date[type="circa"]:before {content:": c";font-weight:normal}
+    cf>ref+date[type="spurious"]:before {content:": \2020";font-weight:normal}
+    cf>ref+date[type="spurious-ante"]:before {content:": \2020\00a0\0061";font-weight:normal}
+    cf>ref+date[type="spurious-post"]:before {content:": \2020\00a0p";font-weight:normal}
+    cf>ref+date[type="spurious-circa"]:before {content:": \2020\00a0\0063";font-weight:normal}
+    cf>ref+date[type="query"]:before {content:": ?\00a0";font-weight:normal}
+    cf>ref+date[type="query-ante"]:before {content:": ?\00a0\0061";font-weight:normal}
+    cf>ref+date[type="query-post"]:before {content:": ?\00a0p";font-weight:normal}
+    cf>ref+date[type="query-circa"]:before {content:": ?\00a0\0063";font-weight:normal}
+    cf>date:after {content:""}
+    cf>date[recte]:after {content:" (recte "attr(recte)")";font-weight:normal}
+    cf>date+insp:before {content:" ("}
+    cf>ref+insp:before {content:": ("}
+    cf>ref:last-child:after {content:""}
+    cf>ref>place>id:last-child:before {content:"id.";text-decoration:none;font-weight:normal;font-style:normal}
+    cf>ref>place>ibid:last-child:before {content:"ib.";font-style:normal}
+
+    ed>place>id:before {content:"id. ";text-decoration:none;font-weight:normal;font-style:normal}
+    ed>place>ibid:before {content:"ib. ";font-style:normal}
+
+    loc {font-style:normal}
+    ibid:before {content:"Ib. ";font-style:italic}
+
+    vern {font-style:italic}
+    ed>vern[lang]:before {content:attr(lang)": ";font-style:normal}
+    i {font-style:italic}
+    lat {font-style:italic}
+    note>lat {font-style:normal}
+    ss {vertical-align:top;font-size:60%}
+
+    fraction:before {content:attr(numerator);vertical-align:top;font-size:60%}
+    fraction {content:"\2044";vertical-align:middle;font-size:inherit}
+    fraction:after {content:attr(denominator);vertical-align:bottom;font-size:60%}
+
+    note {font-family:'Arial Unicode MS', sanserif;color:red; font-size:80%}
+    note:before {content:" {"}
+    note:after {content:"} "}
+    query {font-family:'Arial Unicode MS', sanserif;color:red;font-weight:normal;display:block}
+    query[typesetternote=true] {color:#8b0000}
+    entry>query:before {content:"*** [QUERY on preceding entry: ";font-weight:bold;color:green}
+    entry>query[typesetternote=true]:before {content:"*** [NOTE TO PRINTER on preceding entry: ";font-family:'Arial Unicode MS', sanserif;font-weight:bold;color:#006400}
+    query:before {content:"*** [QUERY: ";font-weight:bold;color:green}
+    query[typesetternote=true]:before {content:"*** [NOTE TO PRINTER: ";font-weight:bold;color:#006400}
+    query:after {content:" ] ***";font-weight:bold;color:green}
+    query[typesetternote=true]:after {content:" ] ***";font-weight:bold;color:#006400}
+}
+/*Do not end q1 with two full stops (i.e. where loc ends in full stop, do not add final full stop to q1*/
+/*qt>ref:last-child>see:last-child Don't add any content when containing only v:empty and when followed by qt containing see separate from prec. qt with comma rather than semicolon*/
+
