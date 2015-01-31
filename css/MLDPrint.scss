@@ -12,7 +12,8 @@ div[id^=DMLBS].entry {
     box:before {content:"[ BOX NUMBER: \"attr(xml|id)\" ]";font-family:'Arial Unicode MS', sanserif;font-weight:bold;color:blue}
     MLDFASC>box:first-child {page-break-before:avoid}
 
-    entry {display:block;padding-top:0.2cm;line-height:1.65}
+    /*entry {display:block;padding-top:0.2cm;line-height:1.65}*/
+    entry {display:block;line-height:1.65}
     /*entry {display:block;}*/
     entry[crossref=true] {display:inline;line-height:1.75}
     entry[crossref=true]+entry[crossref=true] {display:inline} 
