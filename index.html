@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="css/dvlg.css" />
         <!--link rel="stylesheet" type="text/css" href="css/dge.css" /-->
         <link rel="stylesheet" type="text/css" href="css/ducange.css" />
+        <link rel="stylesheet" type="text/css" href="css/MLDPrint.css" />
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.8.14.custom.css" />
 		<link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.css" />
 		<link rel="stylesheet" type="text/css" href="css/jquery.qtip.css" />
@@ -331,7 +332,7 @@
 				 * (requires JSON???)
 				 */
 				$("#search_word").autocomplete({
-					source: "/cgi-bin/autocomplete.py",
+					source: "/cgi-bin/logeion/autocomplete.py",
 					delay: 0,
 					minLength: 3,
 					select: function(event, ui) {
@@ -521,12 +522,12 @@
 				$("#notices").html("");
 				
 				$("#result").fadeOut("slow", function(){
-					$.get("/cgi-bin/headword.py", {search_term : sw}, function(data){
+					$.get("/cgi-bin/logeion/headword.py", {search_term : sw}, function(data){
 						$("#headword").html(sw);
 						if (data.substring(0, 4) == "<p>0") {
 							if (wordwheel_done) {
 								sw = $("#w30").html();
-								$.get("/cgi-bin/headword.py", {search_term : sw}, function(data){
+								$.get("/cgi-bin/logeion/headword.py", {search_term : sw}, function(data){
 									$("#headword").html(sw);
 									api.getContentPane().html(data);
 									$("#result").fadeTo("slow", 1, function(){
@@ -553,7 +554,7 @@
 				});	
 				
 				$("#wordwheel_container").slideUp("slow", function(){
-					$.get("/cgi-bin/wordwheel.py", {search_term : sw}, function(data){
+					$.get("/cgi-bin/logeion/wordwheel.py", {search_term : sw}, function(data){
 						data = data.replace(/(\r\n|\n|\r)/gm,"")
 						data = JSON.parse(data);
 						$("#wordwheel").html(data.ww);
@@ -565,7 +566,7 @@
 							}
 							if (not_found) {
 								sw = $("#w30").html();
-								$.get("/cgi-bin/headword.py", {search_term : sw}, function(data){
+								$.get("/cgi-bin/logeion/headword.py", {search_term : sw}, function(data){
 									$("#headword").html(sw);
 									api.getContentPane().html(data);
 									$("#result").fadeTo("slow", 1, function(){
@@ -594,7 +595,7 @@
 				$("#notices").html("");
 				
 				$("#result").fadeTo("slow", 0, function(){
-					$.get("/cgi-bin/headword.py", {search_term : sw}, function(data){
+					$.get("/cgi-bin/logeion/headword.py", {search_term : sw}, function(data){
 						$("#headword").html(sw);
 						//$("#entries").html(data);
 						api.getContentPane().html(data);
@@ -628,7 +629,7 @@
 					
 					$("li.other_hws").queue(function(){
 						$("li.other_hws").stop(true);
-						$.get("/cgi-bin/partial_wordwheel.py", {search_term : sw, difference: diff}, function(data){
+						$.get("/cgi-bin/logeion/partial_wordwheel.py", {search_term : sw, difference: diff}, function(data){
 							for (i = 0; i < -diff; i++) {
 								$("#w" + (60 - (diff + i))).remove();
 							}
@@ -656,7 +657,7 @@
 					
 					$("li.other_hws").queue(function(){
 						$("li.other_hws").stop(true);
-						$.get("/cgi-bin/partial_wordwheel.py", {search_term : sw, difference: diff}, function(data){
+						$.get("/cgi-bin/logeion/partial_wordwheel.py", {search_term : sw, difference: diff}, function(data){
 							for (i = 0; i < diff; i++) {
 								$("#w" + i).remove();
 							}
@@ -815,20 +816,20 @@
 			}
 			
 			function getTextbook(sw) {
-				$.get("/cgi-bin/textbook.py", {search_term : sw}, function(data){
+				$.get("/cgi-bin/logeion/textbook.py", {search_term : sw}, function(data){
 					$("#textbook").html(data);
 				});
 			}
 			
 			function getCollocations(sw) {
-				$.get("/cgi-bin/collocation.py", {search_term : sw}, function(data){
+				$.get("/cgi-bin/logeion/collocation.py", {search_term : sw}, function(data){
 					$("#collocations").html(data);
 				});
 				//$("#collocations").html("");
 			}
 			
 			function getFrequencies(sw) {
-				$.get("/cgi-bin/frequency.py", {search_term : sw}, function(data){
+				$.get("/cgi-bin/logeion/frequency.py", {search_term : sw}, function(data){
 					$("#frequencies").html(data);
 				});
 				//$("#frequencies").html("");
