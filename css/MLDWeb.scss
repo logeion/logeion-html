@@ -1,0 +1,90 @@
+/*@import url('MLD Meta.css');*/
+@namespace xml url("http://www.w3.org/XML/1998/namespace");
+
+div[id^="DMLBS"].entry {
+    * {display:inline}
+    MLDFASC,entry {font-family:'times new roman', times, serif;
+    font-size:11.5pt;
+    display:block}
+
+    box {display:block;text-align:justify;line-height:1.65;page-break-before:always}
+    box:not([xml|id]):before {content:""}
+    box:before {content:"[ BOX NUMBER: "attr(xml,id)" ]";font-family:'Arial Unicode MS', sanserif;font-weight:bold;color:blue}
+    MLDFASC>box:first-child {page-break-before:avoid}
+
+    entry {display:block;padding-top:0.2cm;line-height:1.65}
+    entry[crossref=true] {display:inline;line-height:1.75}
+    entry[crossref=true]+entry[crossref=true] {display:inline} 
+    entry[crossref=true]+entry:before {content:""}
+    entry[crossref=true] {font-size:80%}
+
+    l {font-weight:bold}
+
+    e[lang] {font-style:italic}
+    e[lang="CL"],e[lang="LL"],e[lang="ML"],e[lang="Byz."],e[lang="Gk."],e[lang="Mod. Gk."],e[lang="Med. Gk."] {font-style:normal}
+
+    /* For var sp entries*/
+    sp>ls>lm>l {font-weight:normal}
+    sp>s1:not([snum])>s2:first-child>def:first-child>let:first-child:before {content:"\a\2003";white-space:pre}
+    /*sp>v+s1:before {content:"\a   "}*/
+
+    /* xref in definitions*/
+    def>v {font-style:italic}
+
+    /* xref in ed note*/
+    ed>v {font-style:normal}
+
+    s1 {display:inline}
+    s1[snum] {display:block;padding-top:0.25cm;text-indent:0.5cm;line-height:1.65}
+
+    addinfo>v {font-style:italic}
+
+    q1 {display:block;text-indent:0.5cm;padding-top:0.1cm;font-size:90%;line-height:1.65}
+
+    qt[checkingnotes]:after {content:" { "attr(location)" "attr(checkingnotes)"}";font-family:'Arial Unicode MS', sanserif;color:red}
+
+    date {font-weight:bold}
+
+    ref {}
+    type {font-style:italic}
+    /* loc+type:before {content:" (";font-style:normal} */
+
+    au,sc {font-style:normal;font-variant:small-caps}
+
+    wk {font-style:italic}
+    /* wk:after {content:" "} */
+
+    loc {font-style:normal}
+
+    vern {font-style:italic}
+    i {font-style:italic}
+    lat {font-style:italic}
+    note>lat {font-style:normal}
+    ss {vertical-align:top;font-size:60%}
+
+    note {font-family:'Arial Unicode MS', sanserif;color:red; font-size:80%}
+    query {font-family:'Arial Unicode MS', sanserif;color:red;font-weight:normal;display:block}
+    query[typesetternote=true] {color:#8b0000}
+    entry>query:before {content:"*** [QUERY on preceding entry: ";font-weight:bold;color:green}
+    entry>query[typesetternote=true]:before {content:"*** [NOTE TO PRINTER on preceding entry: ";font-family:'Arial Unicode MS', sanserif;font-weight:bold;color:#006400}
+    query:before {content:"*** [QUERY: ";font-weight:bold;color:green}
+    query[typesetternote=true]:before {content:"*** [NOTE TO PRINTER: ";font-weight:bold;color:#006400}
+    query:after {content:" ] ***";font-weight:bold;color:green}
+    query[typesetternote=true]:after {content:" ] ***";font-weight:bold;color:#006400}
+    /*Do not end q1 with two full stops (i.e. where loc ends in full stop, do not add final full stop to q1*/
+    /*qt>ref:last-child>see:last-child Don't add any content when containing only v:empty and when followed by qt containing see separate from prec. qt with comma rather than semicolon*/
+
+    /* New entries */
+    span[class=label], span[class=hom] {font-weight:bold}
+    span[class=big-id], span[class=big-ibid] {font-style:italic}
+    span[class=little-id], span[class=little-ibid] {font-style:normal}
+    span[class=pseud] {font-style:italic}
+    span[class=italic] {font-style:italic}
+    span[class=numerator] {vertical-align:top;font-size:60%}
+    span[class=fracslash] {vertical-align:middle;font-size:inherit}
+    span[class=denominator] {vertical-align:bottom;font-size:60%}
+    span[class=lemmaalt] {font-weight:bold}
+
+    q:before { content: ""; }
+    q:after { content: ""; }
+}
